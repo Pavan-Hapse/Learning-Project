@@ -14,7 +14,7 @@ class BuyerModel(models.Model):
 class CourseModel(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=1000)
-    price = models.DecimalField(max_digit=8, decimal_places=2)
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     start_date = models.DateTimeField(null=False, blank=False)
     end_date = models.BooleanField(null=False, blank=False)
     is_active = models.BooleanField(default=False)

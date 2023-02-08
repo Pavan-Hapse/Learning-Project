@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .model import BuyerModel, CourseModel
+from ..models import BuyerModel, CourseModel
 
 
 class BuyerModelSerializer(serializers.ModelSerializer):
