@@ -26,7 +26,7 @@ class InstituteModel_detail(viewsets.ModelViewSet):
     serializer_class = InstituteModelSerializer
     queryset = InstituteModel.objects.all()
     filter_backends = [filters.SearchFilter]
-    search_fields = ['name', 'id']
+    search_fields = [ 'courses__title']             #This field return the particular field data of other table
 
 
 class AddressModel_detail(viewsets.ModelViewSet):
