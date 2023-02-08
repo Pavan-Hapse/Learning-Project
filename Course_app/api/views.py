@@ -1,5 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
+from rest_framework import filters
+
 
 from .serializers import (CourseModelSerializer, StateModelSerializer, InstituteModelSerializer,
                           CountryModelSerializer, BuyerModelSerializer, AddressModelSerializer)
@@ -16,33 +18,34 @@ class Buyer_detail(viewsets.ModelViewSet):
 class Course_detail(viewsets.ModelViewSet):
     serializer_class = CourseModelSerializer
     queryset = CourseModel.objects.all()
-    filter_backends = [ DjangoFilterBackend ]
-    filterset_fields = [ 'title' ]
+    filter_backends = [ filters.SearchFilter ]
+    search_fields = [ 'title']
 
 
 class InstituteModel_detail(viewsets.ModelViewSet):
     serializer_class = InstituteModelSerializer
     queryset = InstituteModel.objects.all()
-    filter_backends = [ DjangoFilterBackend ]
-    search_field = ['name', 'id']
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name', 'id']
 
 
 class AddressModel_detail(viewsets.ModelViewSet):
     serializer_class = AddressModelSerializer
     queryset = AddressModel.objects.all()
-    filter_backends = [ DjangoFilterBackend ]
-    filterset_fields = [ 'Country' ]
+    filter_backends = [ filters.SearchFilter ]
+    search_fields = [ 'country' ]
 
 
 class StateModel_detail(viewsets.ModelViewSet):
     serializer_class = StateModelSerializer
     queryset = StateModel.objects.all()
-    filter_backends = [ DjangoFilterBackend ]
-    filterset_fields = [ 'name' ]
+    filter_backends = [ filters.SearchFilter ]
+    search_fields = [ 'name']
 
 
 class CountryModel_detail(viewsets.ModelViewSet):
     serializer_class = CountryModelSerializer
     queryset = CountryModel.objects.all()
-    filter_backends = [ DjangoFilterBackend ]
-    filterset_fields = [ 'name' ]
+    filter_backends = [ filters.SearchFilter ]
+    search_fields = [ 'name']
+
