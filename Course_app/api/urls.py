@@ -6,8 +6,8 @@ from .views import (Buyer_detail, Course_detail, InstituteModel_detail,
 
 router = routers.DefaultRouter()
 router.register(r'Buyer', Buyer_detail)
-router.register(r'course', Course_detail)
-router.register(r'institute', InstituteModel_detail)
+router.register(r'courses', Course_detail)
+router.register(r'institutes', InstituteModel_detail)
 router.register(r'address', AddressModel_detail)
 router.register(r'state', StateModel_detail)
 router.register(r'country', CountryModel_detail)

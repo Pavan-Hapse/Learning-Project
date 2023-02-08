@@ -11,8 +11,8 @@ from ..models import BuyerModel, CourseModel, InstituteModel, AddressModel, Stat
 class Buyer_detail(viewsets.ModelViewSet):
     serializer_class = BuyerModelSerializer
     queryset = BuyerModel.objects.all()
-    filter_backends = [ DjangoFilterBackend ]
-    filterset_fields = [ 'first_name' ]
+    filter_backends = [ filters.SearchFilter ]
+    search_fields = [ 'first_name' ]
 
 
 class Course_detail(viewsets.ModelViewSet):
