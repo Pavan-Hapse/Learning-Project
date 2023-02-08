@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-
+from rest_framework.viewsets import ViewSet, ModelViewSet
 from .serializers import BuyerModelSerializer
 from .serializers import CourseModelSerializer
 from ..models import BuyerModel, CourseModel

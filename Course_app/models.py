@@ -10,6 +10,9 @@ class BuyerModel(models.Model):
     email = models.EmailField(blank=False)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.first_name
+
 
 class CourseModel(models.Model):
     title = models.CharField(max_length=200)
@@ -18,3 +21,6 @@ class CourseModel(models.Model):
     start_date = models.DateTimeField(null=False, blank=False)
     end_date = models.BooleanField(null=False, blank=False)
     is_active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
