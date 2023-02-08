@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 
 from .serializers import (CourseModelSerializer, StateModelSerializer, InstituteModelSerializer,
@@ -8,28 +9,40 @@ from ..models import BuyerModel, CourseModel, InstituteModel, AddressModel, Stat
 class Buyer_detail(viewsets.ModelViewSet):
     serializer_class = BuyerModelSerializer
     queryset = BuyerModel.objects.all()
+    filter_backends = [ DjangoFilterBackend ]
+    filterset_fields = [ 'first_name' ]
 
 
 class Course_detail(viewsets.ModelViewSet):
     serializer_class = CourseModelSerializer
     queryset = CourseModel.objects.all()
+    filter_backends = [ DjangoFilterBackend ]
+    filterset_fields = [ 'title' ]
 
 
 class InstituteModel_detail(viewsets.ModelViewSet):
     serializer_class = InstituteModelSerializer
     queryset = InstituteModel.objects.all()
+    filter_backends = [ DjangoFilterBackend ]
+    search_field = ['name', 'id']
 
 
 class AddressModel_detail(viewsets.ModelViewSet):
     serializer_class = AddressModelSerializer
     queryset = AddressModel.objects.all()
+    filter_backends = [ DjangoFilterBackend ]
+    filterset_fields = [ 'Country' ]
 
 
 class StateModel_detail(viewsets.ModelViewSet):
     serializer_class = StateModelSerializer
     queryset = StateModel.objects.all()
+    filter_backends = [ DjangoFilterBackend ]
+    filterset_fields = [ 'name' ]
 
 
 class CountryModel_detail(viewsets.ModelViewSet):
     serializer_class = CountryModelSerializer
     queryset = CountryModel.objects.all()
+    filter_backends = [ DjangoFilterBackend ]
+    filterset_fields = [ 'name' ]

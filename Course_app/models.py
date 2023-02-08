@@ -17,11 +17,18 @@ class CountryModel(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.name
+
 
 class StateModel(models.Model):
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=30)
     county = models.ForeignKey(CountryModel, on_delete=models.PROTECT, null=True, blank=True)
+
+
+    def __str__(self):
+        return self.name
 
 
 class BuyerModel(models.Model):
@@ -59,9 +66,13 @@ class AddressModel(BaseModel):
     is_archived = models.BooleanField(default=True)
 
 
+    def __str__(self):
+        return self.country
+
+
 class InstituteModel(BaseModel):
     name = models.CharField(max_length=200)
-    courses = models.ForeignKey(CourseModel, blank=True, on_delete=models.SET_NULL, related_name='course_institutes')
+    courses = models.ForeignKey(CourseModel, blank=True, on_delete=models.SET_NULL, null=True, related_name='course_institutes')
     description = models.CharField(max_length=1024, null=True, blank=True)
     terms_and_conditions = models.TextField(max_length=1024)
 
