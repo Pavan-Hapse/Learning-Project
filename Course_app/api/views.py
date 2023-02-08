@@ -1,6 +1,7 @@
 from rest_framework import viewsets
 
-from .serializers import CourseModelSerializer, StateModelSerializer, InstituteModelSerializer, CountryModelSerializer, BuyerModelSerializer, AddressModelSerializer
+from .serializers import (CourseModelSerializer, StateModelSerializer, InstituteModelSerializer,
+                          CountryModelSerializer, BuyerModelSerializer, AddressModelSerializer)
 from ..models import BuyerModel, CourseModel, InstituteModel, AddressModel, StateModel, CountryModel
 
 
@@ -20,11 +21,6 @@ class InstituteModel_detail(viewsets.ModelViewSet):
 
 
 class AddressModel_detail(viewsets.ModelViewSet):
-    serializer_class = AddressModelSerializer
-    queryset = AddressModel.objects.all()
-
-
-class Model_detail(viewsets.ModelViewSet):
     serializer_class = AddressModelSerializer
     queryset = AddressModel.objects.all()
 

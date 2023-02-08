@@ -61,7 +61,7 @@ class AddressModel(BaseModel):
 
 class InstituteModel(BaseModel):
     name = models.CharField(max_length=200)
-    courses = models.ManyToManyField(CourseModel, blank=True, related_name='course_institutes')
+    courses = models.ForeignKey(CourseModel, blank=True, on_delete=models.SET_NULL, related_name='course_institutes')
     description = models.CharField(max_length=1024, null=True, blank=True)
     terms_and_conditions = models.TextField(max_length=1024)
 
