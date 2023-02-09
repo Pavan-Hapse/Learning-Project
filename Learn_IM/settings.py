@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Course_app',
     'django_filters',
     'Course_operation',
+    'django_user_agents',
 ]
 
 MIDDLEWARE = [
@@ -51,8 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "Learn_IM.middleware.main.CustomMiddleware",
-    # "Learn_IM.middleware.main.RejectSpambotRequestsMiddleware",
+
 
 ]
 
