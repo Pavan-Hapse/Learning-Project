@@ -52,7 +52,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-
+    "Course_operation.middleware.Middlewareoperation",
+    "Course_operation.middleware.Standardmiddleoperation",
+    "Course_operation.middleware.CustomMiddleware",
+    "Course_operation.middleware.UserMiddleware",
 
 ]
 
